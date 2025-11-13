@@ -9,7 +9,7 @@ rm -rf node_modules
 rm -rf dist
 
 # Install required dependencies
-npm install
+# npm install
 
 # Build the Angular app
 npm run build --prod
