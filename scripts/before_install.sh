@@ -1,13 +1,19 @@
 #!/bin/bash
+set -e
 
-#_Change_Working_Directory
+# Go to project folder
 cd /home/ec2-user/server
 
-#_Update_&_Set_Node_Version
+# ✅ Clean old deployment files to avoid overwrite errors
+rm -rf *
+
+# Update & set Node.js version
 curl -sL https://rpm.nodesource.com/setup_20.x | sudo -E bash -
 
-#_Download_Node_&NPM
-yum -y install nodejs npm
+# Install Node.js and NPM
+sudo yum -y install nodejs npm
 
-#_Download_PM2
-npm install pm2@latest -g
+# Install PM2 globally
+sudo npm install pm2@latest -g
+
+echo "✅ BeforeInstall: EC2 prepared and old files removed."
