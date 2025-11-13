@@ -6,17 +6,16 @@ phases:
       nodejs: 18
 
     commands:
-      - echo Installing Angular dependencies...
-      - npm install -g @angular/cli
-      - npm install
+      - echo Installing dependencies...
+      - npm ci
 
   build:
     commands:
       - echo Building Angular app...
-      - ng build --configuration production
+      - npm run build -- --configuration production
 
 artifacts:
   files:
+    - dist/**/*
     - appspec.yml
     - scripts/**/*
-    - dist/**/*
