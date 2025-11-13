@@ -25,7 +25,11 @@
             "styles": [
               "src/styles.css"
             ],
-            "outputMode": "browser"
+            "server": "src/main.server.ts",
+            "outputMode": "server",
+            "ssr": {
+              "entry": "src/server.ts"
+            }
           },
           "configurations": {
             "production": {
@@ -41,18 +45,12 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all",
-              "optimization": true,
-              "sourceMap": false,
-              "extractLicenses": true,
-              "namedChunks": false,
-              "buildOptimizer": true
+              "outputHashing": "all"
             },
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true,
-              "vendorChunk": true
+              "sourceMap": true
             }
           },
           "defaultConfiguration": "production"
@@ -89,6 +87,5 @@
         }
       }
     }
-  },
-  "defaultProject": "stolt"
+  }
 }
