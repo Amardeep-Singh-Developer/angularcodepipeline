@@ -1,13 +1,10 @@
 #!/bin/bash
 set -e
 
-# Go to project folder
 cd /home/ec2-user/server
 
-# ✅ Install dependencies
+# Install backend dependencies if any
 npm install
 
-# ✅ Build the Angular app
-npm run build --prod
-
-echo "✅ AfterInstall: Angular build completed successfully."
+# Angular already built in CodeBuild → no ng build needed
+echo "✅ Deployment ready. Angular build already done."
