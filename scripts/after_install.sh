@@ -1,10 +1,13 @@
 #!/bin/bash
 set -e
 
-cd /home/ec2-user/server
+cd /home/ec2-user/server/dist/stolt
 
-# Install backend dependencies if any
+# Install dependencies
 npm install
 
-# Angular already built in CodeBuild → no ng build needed
-echo "✅ Deployment ready. Angular build already done."
+# Start Angular SSR server in background
+nohup PORT=4000 HOST=0.0.0.0 node --experimental-specifier-resolution=node server/main.server.mjs > /home/ec2-user/server/serve.log 2>&1 &
+
+echo "✅ Angular Universal SSR app started"
+exit 0
