@@ -12,6 +12,8 @@ phases:
     commands:
       - echo Building Angular app...
       - npm run build -- --configuration production
+      - echo Copying package.json & package-lock.json to dist
+      - cp package.json package-lock.json dist/stolt/
 
 artifacts:
   files:
